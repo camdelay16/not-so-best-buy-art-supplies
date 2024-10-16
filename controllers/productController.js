@@ -1,5 +1,5 @@
 //Get Index
-const Product = require('..models/product')
+const { Product } = require('../models')
 const getAllProducts = async (req,res) => {
     try {
         const products = await Product.find()

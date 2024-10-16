@@ -1,5 +1,5 @@
 // Get Index
-const Category = require('..models/category')
+const { Category } = require('../models')
 const getAllCategories = async (req,res) => {
     try {
         const categories = await Category.find()
