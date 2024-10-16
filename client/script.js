@@ -1,4 +1,4 @@
-const searchButton = document.querySelector(`.search-button`)
+const searchButton = document.querySelector(`#search-button`)
 const search = document.querySelector(`#search`)
 const results = document.querySelector(`#results`)
 const productDetails = document.querySelector('#productDetails')
@@ -30,31 +30,31 @@ async function searchProduct() {
         let response = await axios.get(`${url}${searchText}`)
         console.log(response)
 
-        results.style.display = `flex`
-        productDetails.style.display = `flex`
+        results.classList.remove = `hidden`
+        productDetails.classList.remove = `hidden`
 
-        let pName = response.data.productName
+        let pName = response.data[0].productName
         productName.textContent = `${pName}`
 
-        let pBrands = response.data.brandId
+        let pBrands = response.data[0].brandId
         brands.textContent = `${pBrands}`
 
-        let pImg = response.data.imageURL
+        let pImg = response.data[0].imageURL
         productImg.setAttribute('src', pImg)
 
-        let pStock = response.data.stock
+        let pStock = response.data[0].stock
         stock.textContent = `${pStock}`
 
-        let isAvailable = response.data.isAvailable;
+        let isAvailable = response.data[0].isAvailable;
         let availableText;
         if (isAvailable === true) {availableText = `Available` }
         else {availableText = `Not Available` };
         available.textContent = `${availableText}`;
 
-        let pPrice = response.data.price
+        let pPrice = response.data[0].price
         price.textContent = `${pPrice}`
 
-        let pDescription = response.data.description
+        let pDescription = response.data[0].description
         description.textContent = `${pDescription}`
 
         clearSearch()
