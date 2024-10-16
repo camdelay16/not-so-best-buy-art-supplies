@@ -15,7 +15,7 @@ const main = async () => {
             url: "https://www.dickblick.com/brands/copic/",
         },
         {
-            brand_name: "Sahura",
+            brand_name: "Sakura",
             url: "https://www.dickblick.com/brands/sakura/",
         }
     ]
