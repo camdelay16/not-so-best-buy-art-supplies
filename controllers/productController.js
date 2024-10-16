@@ -27,7 +27,7 @@ const getProductsById = async (req,res) => {
 const getProductsByName = async (req,res) => {
     try {
         const { name } = req.params
-        const products = await Product.find({ name: new RegExp(name, 'i') })
+        const products = await Product.find({ productName: new RegExp(name, 'i') })
         if (products.length > 0) {
             return res.json(products)
         }

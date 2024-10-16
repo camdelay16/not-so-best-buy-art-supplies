@@ -27,7 +27,7 @@ const getCategoriesById = async (req,res) => {
 const getCategoriesByName = async (req,res) => {
     try {
         const { name } = req.params
-        const categories = await Category.find({ name: new RegExp(name, 'i') })
+        const categories = await Category.find({ supplyType: new RegExp(name, 'i') })
         if (categories.length > 0) {
             return res.json(categories)
         }
