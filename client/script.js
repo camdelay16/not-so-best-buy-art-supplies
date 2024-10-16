@@ -30,8 +30,9 @@ async function searchProduct() {
         let response = await axios.get(`${url}${searchText}`)
         console.log(response)
 
-        results.classList.remove = `hidden`
-        productDetails.classList.remove = `hidden`
+
+        results.style.display = `grid`
+        productDetails.style.display = `grid`
 
         let pName = response.data[0].productName
         productName.textContent = `${pName}`
