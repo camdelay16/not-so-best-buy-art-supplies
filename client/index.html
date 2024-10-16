@@ -52,15 +52,34 @@
 
     <div class="shop-by-category">
         <h5>Shop By Category</h5>
-        <div class="cat-button"><img src=""><span>Papers &#38; Boards</span></div>
-        <div class="cat-button"><img src=""><span>Tools &#38; Supplies</span></div>
+        <div class="cat-button" id="paper"><img src=""><span>Papers &#38; Boards</span></div>
+        <div class="cat-button" id="tools"><img src=""><span>Tools &#38; Supplies</span></div>
         <div class="cat-button"><img src=""><span>Paint &#38; Mediums</span></div>
         <div class="cat-button"><img src=""><span>Canvas &#38; Surfaces</span></div>
         <div class="cat-button"><img src=""><span>Brushes &#38; Painting Tools</span></div>
     </div>
 
-    <div class="cat-results hidden">
-        <div id="cat-results"></div>
+    <div id="cat-results" class="hidden">
+        <div id="cat-results-list">
+            <!-- category results will display here -->
+        </div>
+    </div>
+
+    <div id="cat-details" class="hidden">
+        <div class="cat-details-container">
+            <img id="cat-imgs" src="">
+            <div class="cat-item-details">
+                <h3 id="catProductName"></h3>
+                <h6 id="CatBrands"></h6>
+                <img id="CatProductImg" src="">
+                <h6 id="CatStock"></h6>
+                <h6 id="CatAvailable"></h6>
+                <button id="cat-cart-btn"></button>
+                <h4 id="cat-price"></h6>
+                <p id="cat-description"></p>
+            </div>
+        </div>
+        <button id="close-cat-details-btn">Close</button>
     </div>
 
     <div id="main-img">
@@ -75,5 +94,6 @@
         <img src="" alt="" class="featured-products">
     </div>
     
+    <script defer src="script.js"></script>    
 </body>
 </html>

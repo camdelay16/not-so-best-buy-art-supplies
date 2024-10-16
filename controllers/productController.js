@@ -37,6 +37,26 @@ const getProductsByName = async (req,res) => {
     }
 }
 
+const getPaperBoardProducts = async (req,res) => {
+    try {
+        const { category } = req.params
+        const products = await Product.find({ supplyType: '670fbd9f975dacd92f675251' })
+            return res.json(products)
+    } catch(e) {
+        return res.status(500).send(e.message)
+    }
+}
+
+const getToolSupplyProducts = async (req,res) => {
+    try {
+        const { category } = req.params
+        const products = await Product.find({ supplyType: '670fbd9f975dacd92f675252' })
+            return res.json(products)
+    } catch(e) {
+        return res.status(500).send(e.message)
+    }
+}
+
 //Get Eco-Friendly Products
 const getEcoFriendlyProducts = async (req,res) => {
     try {
@@ -120,6 +140,8 @@ module.exports = {
     getAllProducts,
     getProductsById,
     getProductsByName,
+    getPaperBoardProducts,
+    getToolSupplyProducts,
     getEcoFriendlyProducts,
     getWaterSolubleProducts,
     getChildSafeProducts,
