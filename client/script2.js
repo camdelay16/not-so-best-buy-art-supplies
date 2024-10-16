@@ -18,6 +18,9 @@ const resultsList = document.getElementById('cat-results-list')
 const detailsContainer = document.getElementById('cat-details')
 const closeDetailsButton = document.getElementById('close-cat-details-btn')
 
+// Replace with the actual ID you want to filter by
+const paperBoardId = '670fbd9f975dacd92f675251'
+
 paperBoardsButton.addEventListener('click', async () => {
     resultsList.innerHTML = ''
     resultsContainer.classList.remove('hidden')
@@ -26,9 +29,8 @@ paperBoardsButton.addEventListener('click', async () => {
         const response = await fetch('http://localhost:3001/products/')
         const products = await response.json()
 
-        const paperBoard = [{ paperBoard[0]._id }]
-
-        const filteredProducts = products.filter(product => product.supplyType === paperBoard)
+        // Use the paperBoardId directly in the filter
+        const filteredProducts = products.filter(product => product.supplyType === paperBoardId)
 
         // Check if there are products to display
         if (filteredProducts.length > 0) {
@@ -41,17 +43,17 @@ paperBoardsButton.addEventListener('click', async () => {
                     <img src="${product.imageURL || ''}" alt="${product.productName}" />
                     <p>Price: ${product.price}</p>
                     <button class="view-product-btn" data-id="${product._id}">Details</button>
-                `
+                `;
                 resultsList.appendChild(resultItem)
             })
         } else {
-            resultsList.innerHTML = '<p>No results found.</p>' // Display message if no products found
+            resultsList.innerHTML = '<p>No results found.</p>'
         }
     } catch (error) {
         console.error('Error fetching products:', error)
         resultsList.innerHTML = '<p>Error fetching results. Please try again.</p>'
     }
-})
+});
 
 // Event listener for product details
 resultsList.addEventListener('click', async (e) => {
@@ -76,12 +78,13 @@ resultsList.addEventListener('click', async (e) => {
             console.error('Error fetching product details:', error)
         }
     }
-})
+});
 
 // Close details button
 closeDetailsButton.addEventListener('click', () => {
-    detailsContainer.classList.add('hidden') 
+    detailsContainer.classList.add('hidden')
 })
+
 
 //     const { default: products } = await import('../seed/products.js');
 //     const filteredProducts = products.filter(product => product.supplyType === paperBoard[0]._id);
