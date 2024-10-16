@@ -34,8 +34,20 @@
         <input type="text" placeholder="Whatcha looking for?" id="search">
         <button id="search-button">Search</button>
     </div>
-
 </header>
+
+<section id="results" class="hidden">
+    <div id="productDetails">
+        <h3 id="productName"></h3>
+        <h6 id="brands"></h6>
+        <img id="productImg" src="">
+        <h6 id="stock"></h6>
+        <h6 id="available"></h6>
+        <button id="add-to-cart-btn"></button>
+        <h4 id="price"></h6>
+        <p id="description"></p>
+    </div>
+</section>
 
     <div class="shop-by-category">
         <h5>Shop By Category</h5>
@@ -45,6 +57,11 @@
         <div class="cat-button"><img src=""><span>Canvas &#38; Surfaces</span></div>
         <div class="cat-button"><img src=""><span>Brushes &#38; Painting Tools</span></div>
     </div>
+
+    <div class="cat-results hidden">
+        <div id="cat-results"></div>
+    </div>
+
     <div id="main-img">
         <img src="Images/We're.png" alt=""/>
     </div>

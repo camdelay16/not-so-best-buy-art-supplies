@@ -118,6 +118,10 @@ header {
     color: #333;
 }
 
+.hidden {
+    display: none;
+}
+
 #main-img {
     margin: 20px 0;
     width: 100%;
