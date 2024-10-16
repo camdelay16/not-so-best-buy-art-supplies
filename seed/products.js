@@ -1,14 +1,20 @@
 const db = require('../db')
-const { Product } = require('../models')
+const { Category, Brand, Product } = require('../models')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
+    const paperBoard = await Category.find({ supplyType: `Papers & Boards` })
+    const toolsSupply = await Category.find({ supplyType: `Tools & Supplies` })
+    const strathmore = await Brand.find({ brand_name: `Strathmore` })
+    const copic = await Brand.find({ brand_name: `Copic` })
+    const sakura = await Brand.find({ brand_name: `Sakura` })
+
     const products = [
         {
             productName: `Strathmore Hardbound Toned Sketch Journal`,
-            supplyType: `Papers & Boards`,
-            brandId: `Strathmore`,
+            supplyType: paperBoard[0]._id,
+            brandId: strathmore[0]._id,
             price: `$24.78`,
             isAvailable: true ,
             stock: `444444`,
@@ -20,8 +26,8 @@ const main = async () => {
         },
         {
             productName: `Strathmore 400 Series Recycled Toned Sketch Wirebound Pads`,
-            supplyType: `Papers & Boards`,
-            brandId: `Strathmore`,
+            supplyType: paperBoard[0]._id,
+            brandId: strathmore[0]._id,
             price: `$22.39`,
             isAvailable: true ,
             stock: `333333`,
@@ -33,8 +39,8 @@ const main = async () => {
         },
         {
             productName: `Strathmore 500 Sequential Series Bristol - Loose Sheets`,
-            supplyType: `Papers & Boards`,
-            brandId: `Strathmore`,
+            supplyType: paperBoard[0]._id,
+            brandId: strathmore[0]._id,
             price: `$60.94`,
             isAvailable: true ,
             stock: `222222`,
@@ -46,8 +52,8 @@ const main = async () => {
         },
         {
             productName: `Copic Sketch Marker Set - Set of 72`,
-            supplyType: `Tools & Supplies`,
-            brandId: `Copic`,
+            supplyType: toolsSupply[0]._id,
+            brandId: copic[0]._id,
             price: `$403.44`,
             isAvailable: true ,
             stock: `111111`,
@@ -59,8 +65,8 @@ const main = async () => {
         },
         {
             productName: `Sakura Pigma Micron Pens - Set of 72, Black, Assorted Sizes`,
-            supplyType: `Tools & Supplies`,
-            brandId: `Sakura`,
+            supplyType: toolsSupply[0]._id,
+            brandId: sakura[0]._id,
             price: `$132.98`,
             isAvailable: true ,
             stock: `555555`,
@@ -72,8 +78,8 @@ const main = async () => {
         },
         {
             productName: `Williamsburg Handmade Oil Paints - Basic Painting Set, Set of 13 colors`,
-            supplyType: `Tools & Supplies`,
-            brandId: null,
+            supplyType: toolsSupply[0]._id,
+            brandId: copic[0]._id,
             price: `$146.63`,
             isAvailable: false ,
             stock: `777777`,
