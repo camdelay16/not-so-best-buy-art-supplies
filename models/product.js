@@ -18,3 +18,5 @@ const Product = new Schema (
     },
     { timestamps: true }
 )
+
+module.exports = Product
