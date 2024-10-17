@@ -7,17 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taubman's Art Supplies</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../server.js"></script>
-    <script defer src="script.js"></script>
-    <script defer src="script2.js"></script>
+    <!-- <script defer src="script.js"></script> -->
+    <script defer src="/client/script2.js"></script>
 </head>
 <body>
 
 <header>
     
-    <div id="logo">
-        <img src=""/>
+    <div>
+        <img src="/client/Images/Taubmans.png" class="logo">
     </div>
+
     <div class="icons">
         <img src="" alt="shopping-cart" class="icons">
         <img src="" alt="user" class="icons">
@@ -53,9 +53,9 @@
 </section>
 
     <div class="shop-by-category">
-        <h5>Shop By Category</h5>
-        <div class="cat-button" id="paper"><img src=""><span>Papers &#38; Boards</span></div>
-        <div class="cat-button" id="tools"><img src=""><span>Tools &#38; Supplies</span></div>
+        <!-- <h5>Shop By Category</h5> -->
+        <div id="paper" class="cat-button"><img src=""><span>Papers &#38; Boards</span></div>
+        <div id="tools" class="cat-button"><img src=""><span>Tools &#38; Supplies</span></div>
         <div class="cat-button"><img src=""><span>Paint &#38; Mediums</span></div>
         <div class="cat-button"><img src=""><span>Canvas &#38; Surfaces</span></div>
         <div class="cat-button"><img src=""><span>Brushes &#38; Painting Tools</span></div>
@@ -69,15 +69,16 @@
 
     <div id="cat-details" class="hidden">
         <div class="cat-details-container">
-            <img id="cat-imgs" src="">
             <div class="cat-item-details">
                 <h3 id="catProductName"></h3>
                 <h6 id="CatBrands"></h6>
                 <img id="CatProductImg" src="">
-                <h6 id="CatStock"></h6>
-                <h6 id="CatAvailable"></h6>
-                <button id="cat-cart-btn"></button>
-                <h4 id="cat-price"></h6>
+                    <div class="cat-stock-availability">
+                        <h5 id="CatStock"></h5>
+                        <h5 id="CatAvailable"></h5>
+                    </div>
+                <button id="cat-cart-btn">Add to Cart</button>
+                <h4 id="cat-price"></h4>
                 <p id="cat-description"></p>
             </div>
         </div>
@@ -85,17 +86,21 @@
     </div>
 
     <div id="main-img">
-        <img src="Images/We're.png" alt=""/>
+        <img src="/client/Images/7.png">
     </div>
     <div class="featured-products">
         <h5 class="featured-products">Featured Products</h5>
-        <img src="" alt="" class="featured-products">
-        <img src="" alt="" class="featured-products">
-        <img src="" alt="" class="featured-products">
-        <img src="" alt="" class="featured-products">
-        <img src="" alt="" class="featured-products">
+        <img src="/client/Images/01595-1189-2-4ww.jpg" class="featured-products">
+        <img src="/client/Images/14915-group-1-4ww.jpg" class="featured-products">
+        <img src="/client/Images/19920-1006-1-4ww.jpg" class="featured-products">
+        <img src="/client/Images/51753-1050-M-4ww.jpg" class="featured-products">
+        <img src="/client/Images/66973-1000-M-4ww.jpg" class="featured-products">
+    </div>
+
+    <div id="artist-img">
+        <img src="/client/Images/We're (2).png">
     </div>
     
-    <script defer src="/Users/kishamartin/Desktop/GA/Unit2/Week5/Monday/not-so-best-buy-art-supplies/client/script2.js"></script>    
+    <script defer src="/client/script2.js"></script>    
 </body>
 </html>
