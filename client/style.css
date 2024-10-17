@@ -60,7 +60,7 @@ header {
     gap: 5px;
     margin: 5px;
     margin-left: 15px;
-    margin-right;: 15px
+    margin-right: 15px;
 }
 #productName {
     grid-column: 1/3;
