@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => {
 const searchButton = document.querySelector(`#search-button`)
 const search = document.querySelector(`#search`)
 const results = document.querySelector(`#results`)
@@ -10,6 +11,7 @@ const available = document.querySelector('#available')
 const addToCartBtn = document.querySelector('#add-to-cart-btn')
 const price = document.querySelector('#price')
 const description = document.querySelector('#description')
+const closeResultsBtn = document.querySelector('#close-results-btn')
 
 
 searchButton.addEventListener(`click`, async () => {
@@ -74,7 +76,13 @@ async function searchProduct() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+closeResultsBtn.addEventListener('click', () => {
+    results.classList.add('hidden')
+    productDetails.classList.add('hidden')
+    results.style.display =`none`
+    productDetails.style.display =`none`
+})
+
     const paperButton = document.querySelector('#paper')
     const toolsButton = document.querySelector('#tools')
     const resultsList = document.getElementById('cat-results-list')
