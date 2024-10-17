@@ -47,11 +47,11 @@ async function searchProduct() {
         productImg.setAttribute('src', pImg)
 
         let pStock = response.data[0].stock
-        stock.textContent = `${pStock}`
+        stock.textContent = `Stock: ${pStock}`
 
         let isAvailable = response.data[0].isAvailable;
         let availableText;
-        if (isAvailable === true) {availableText = `Available` }
+        if (isAvailable === true) {availableText = `Available: Yes` }
         else {availableText = `Not Available` };
         available.textContent = `${availableText}`;
 
