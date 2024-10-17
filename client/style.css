@@ -93,6 +93,12 @@ header {
     padding: 10px;
 }
 
+#cat-title {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
 .cat-button {
     display: flex;
     flex-direction: column;
@@ -209,6 +215,12 @@ header {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    #cat-title {
+        display: flex;
+        justify-content: center;
+        align-content: center;
     }
 
     .cat-button {
